@@ -134,19 +134,11 @@
     scene.add(ambientLight);
 
     var directionalLight = new THREE.DirectionalLight('#fff');
-    directionalLight.position.x = Math.random() - 0.5;
-    directionalLight.position.y = Math.random() - 0.5;
-    directionalLight.position.z = Math.random() - 0.5;
+    directionalLight.position.x = 0.5;
+    directionalLight.position.y = 0.3;
+    directionalLight.position.z = 0.2;
     directionalLight.position.normalize();
     scene.add(directionalLight);
-
-    var pointLight1 = new THREE.PointLight('#f00', 1.2, 0);
-    pointLight1.position.set(10, 50, 10).normalize();
-    scene.add(pointLight1);
-
-    var pointLight2 = new THREE.PointLight('#10dfe9', 1.5, 0);
-    pointLight2.position.set(50, 50, 50).normalize();
-    scene.add(pointLight2);
 
     renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -179,8 +171,8 @@
 
   function animate() {
     // ++++++ CPU OVERLOAD BE CAREFUL
-    requestAnimationFrame(animate);
-    controls.update();
+    //requestAnimationFrame(animate);
+    //controls.update();
     render();
   }
 
