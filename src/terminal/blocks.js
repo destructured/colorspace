@@ -1,5 +1,8 @@
 'use strict';
 
+// Services
+const draw = require('../services/draw');
+
 const colorArr = [
   'ff0048', // dark pink
   'ff6500', // orange
@@ -11,12 +14,18 @@ const colorArr = [
 
 let blocks = {};
 
-exports.colorArr = function () {
-  return colorArr;
-};
-
 exports.getBlocks = function () {
   return blocks;
+};
+
+exports.runService = function (service) {
+  switch (service) {
+    case 'draw':
+      draw.generate();
+      break;
+    default:
+      break;
+  }
 };
 
 exports.generate = function () {

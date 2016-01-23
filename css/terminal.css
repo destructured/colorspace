@@ -5,7 +5,7 @@
   background-color: rgba(1, 1, 1, 0.6);
   display: inline-block;
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   width: 350px;
 }
 
@@ -79,7 +79,7 @@ button:focus {
   color: #fff;
 }
 
-button.play {
+button#play {
   position: absolute;
   right: 20px;
   top: 15px;
@@ -90,6 +90,6 @@ button.play {
   color: #62c20e;
 }
 
-.play:hover {
+#play:hover {
   color: #fff;
 }

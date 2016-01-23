@@ -1,4 +1,7 @@
 #service-draw {
   width: 400px;
   height: 200px;
+  z-index: 2;
+  top: 100px;
+  background-color: #fff;
 }

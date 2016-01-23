@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "build": "webpack -p --progress"
+    "build": "webpack -p --progress",
+    "dev": "webpack --progress --color --watch & electron main.js"
   },
   "repository": {
     "type": "git",

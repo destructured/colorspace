@@ -5,8 +5,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     app: './src/main.js',
-    terminal: './src/terminal/terminal.js',
-    services: './src/services/services.js'
+    terminal: './src/terminal/terminal.js'
   },
   output: {
     path: './build',
