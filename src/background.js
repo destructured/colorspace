@@ -1,12 +1,14 @@
-(function () {
-  var height = window.innerHeight;
-  var width = window.innerWidth;
+'use strict';
 
-  var glitchPass;
+exports.generate = function () {
+  let height = window.innerHeight;
+  let width = window.innerWidth;
 
-  var container;
-  var composer;
-  var camera, scene, renderer, controls;
+  let container;
+  let camera;
+  let scene;
+  let renderer;
+  let controls;
 
   init();
   animate();
@@ -16,11 +18,11 @@
     document.body.appendChild(container);
 
     camera = new THREE.OrthographicCamera(
-      width / - 2,
+      width / -2,
       width / 6,
       height / 2,
-      height / - 2,
-      - 500,
+      height / -2,
+      -500,
       600
     );
 
@@ -30,39 +32,40 @@
 
     scene = new THREE.Scene();
 
-    var size = 1000, step = 30;
-    var geometry = new THREE.Geometry();
+    let size = 1000;
+    let step = 30;
+    let geometry = new THREE.Geometry();
 
-    for (var i =- size; i <= size; i += step) {
-      geometry.vertices.push( new THREE.Vector3(- size, 10, i));
-      geometry.vertices.push( new THREE.Vector3(size, 10, i));
+    for (let i = -size; i <= size; i += step) {
+      geometry.vertices.push(new THREE.Vector3(-size, 10, i));
+      geometry.vertices.push(new THREE.Vector3(size, 10, i));
     }
 
-    var geometry2 = new THREE.Geometry();
+    let geometry2 = new THREE.Geometry();
 
-    for (var i =- size; i <= size; i += step) {
-      geometry2.vertices.push( new THREE.Vector3(i, 160, - size));
-      geometry2.vertices.push( new THREE.Vector3(i, 160,   size));
+    for (let i = -size; i <= size; i += step) {
+      geometry2.vertices.push(new THREE.Vector3(i, 160, -size));
+      geometry2.vertices.push(new THREE.Vector3(i, 160, size));
     }
 
-    var material2 = new THREE.LineBasicMaterial({
+    let material2 = new THREE.LineBasicMaterial({
       color: '#ff00e9',
       opacity: 0.9
     });
 
-    var line2 = new THREE.LineSegments(geometry2, material2);
+    let line2 = new THREE.LineSegments(geometry2, material2);
     scene.add(line2);
 
     // Cubes - y-axis
-    var geometry = new THREE.BoxGeometry(100, 250, 240);
-    var material = new THREE.MeshLambertMaterial({
+    geometry = new THREE.BoxGeometry(100, 250, 240);
+    let material = new THREE.MeshLambertMaterial({
       color: '#ff00e9',
       transparent: true,
       opacity: 0.3
     });
 
-    for (var i = 0; i < 20; i ++) {
-      var cube = new THREE.Mesh(geometry, material);
+    for (let i = 0; i < 20; i++) {
+      let cube = new THREE.Mesh(geometry, material);
 
       cube.scale.y = Math.floor(Math.random() * 5 + 1);
       cube.position.x = Math.floor((Math.random() * 500) / 25) * 15 - 312;
@@ -73,15 +76,15 @@
     }
 
     // Cubes - x-axis
-    var geometry3 = new THREE.BoxGeometry(250, 200, 40);
-    var material3 = new THREE.MeshLambertMaterial({
+    let geometry3 = new THREE.BoxGeometry(250, 200, 40);
+    let material3 = new THREE.MeshLambertMaterial({
       color: '#10dfe9',
       transparent: true,
       opacity: 0.2
     });
 
-    for (var i = 0; i < 40; i ++) {
-      var cube3 = new THREE.Mesh(geometry3, material3);
+    for (let i = 0; i < 40; i++) {
+      let cube3 = new THREE.Mesh(geometry3, material3);
 
       cube3.scale.x = Math.floor((Math.random() * 500 - 250));
       cube3.position.x = Math.floor((Math.random() * 500 - 250));
@@ -92,15 +95,15 @@
       scene.add(cube3);
     }
 
-    var geometry4 = new THREE.BoxGeometry(550, 550, 140);
-    var material4 = new THREE.MeshLambertMaterial({
+    let geometry4 = new THREE.BoxGeometry(550, 550, 140);
+    let material4 = new THREE.MeshLambertMaterial({
       color: '#10dfe9',
       transparent: true,
       opacity: 0.3
     });
 
-    for (var i = 0; i < 10; i ++) {
-      var cube4 = new THREE.Mesh(geometry4, material4);
+    for (let i = 0; i < 10; i++) {
+      let cube4 = new THREE.Mesh(geometry4, material4);
 
       cube4.scale.x = Math.floor((Math.random() * 500 - 250));
       cube4.position.x = Math.floor((Math.random() * 500 - 150));
@@ -111,15 +114,15 @@
       scene.add(cube4);
     }
 
-    var geometry2 = new THREE.BoxGeometry(120, 450, 400);
-    var material2 = new THREE.MeshLambertMaterial({
+    geometry2 = new THREE.BoxGeometry(120, 450, 400);
+    material2 = new THREE.MeshLambertMaterial({
       color: '#ff00e9',
       transparent: true,
       opacity: 0.1
     });
 
-    for (var i = 0; i < 50; i ++) {
-      var cube2 = new THREE.Mesh(geometry2, material2);
+    for (let i = 0; i < 50; i++) {
+      let cube2 = new THREE.Mesh(geometry2, material2);
 
       cube2.scale.y = Math.floor(Math.random() * 5 + 1);
       cube2.position.x = Math.floor((Math.random() * 500) / 25) * 25 + 12;
@@ -130,10 +133,10 @@
     }
 
     // Lights
-    var ambientLight = new THREE.AmbientLight( 0x404040 );
+    let ambientLight = new THREE.AmbientLight(0x404040);
     scene.add(ambientLight);
 
-    var directionalLight = new THREE.DirectionalLight('#fff');
+    let directionalLight = new THREE.DirectionalLight('#fff');
     directionalLight.position.x = 0.5;
     directionalLight.position.y = 0.3;
     directionalLight.position.z = 0.2;
@@ -162,25 +165,22 @@
     camera.left = window.innerWidth / -2;
     camera.right = window.innerWidth / 2;
     camera.top = window.innerHeight / 2;
-    camera.bottom = window.innerHeight / - 2;
+    camera.bottom = window.innerHeight / -2;
 
     camera.updateProjectionMatrix();
 
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   function animate() {
     // ++++++ CPU OVERLOAD BE CAREFUL
-    //requestAnimationFrame(animate);
-    //controls.update();
+    // requestAnimationFrame(animate);
+    // controls.update();
     render();
   }
 
   function render() {
-    var timer = Date.now() * 0.0004;
-
     camera.lookAt(scene.position);
-
     renderer.render(scene, camera);
   }
-})();
+};

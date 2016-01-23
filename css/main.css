@@ -1,9 +1,18 @@
+@font-face {
+  font-family: 'knewave-outline';
+  src: url('../fonts/knewave-outline-webfont.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  font-family: 'knewave-outline';
   background: linear-gradient(
     #ff0058,
     #b06edd
   );
   background-attachment: fixed;
+  margin: 0;
 }
 
 canvas {
