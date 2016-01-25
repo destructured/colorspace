@@ -10,8 +10,8 @@ let currX = 0;
 let currY = 0;
 let clientX;
 let clientY;
-const width = 800;
-const height = 600;
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 let currColor = 'rgba(255, 0, 128, 0.8)';
 let currComposition = 'screen';
