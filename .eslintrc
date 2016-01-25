@@ -6,7 +6,8 @@
   },
   "globals": {
     "THREE": true,
-    "localforage": true
+    "localforage": true,
+    "interact": true
   },
   "rules": {
     // Disallow using variables outside the blocks they are defined (especially

@@ -56,7 +56,7 @@ exports.generate = function () {
         if (err) {
           console.log(err);
         } else {
-          console.log(blks);
+          //console.log(blks);
         }
       });
     }.bind(this);
@@ -95,7 +95,7 @@ exports.generate = function () {
     } else {
       blks = JSON.parse(blks);
       for (let k in blks) {
-        console.log(blks);
+        //console.log(blks);
         setBlockItem({
           count: k,
           color: blks[k].color,

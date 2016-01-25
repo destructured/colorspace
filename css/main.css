@@ -20,11 +20,24 @@ body {
   bottom: 0;
 }
 
-canvas {
+.close-service, .save {
+  background-color: rgba(1, 1, 1, 0.4);
   position: absolute;
-  z-index: 1;
-  left: 0;
+  top: -80px;
+  height: 40px;
+  width: 50px;
   right: 0;
-  top: 0;
-  bottom: 0;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  color: #000;
+}
+
+.close-service:hover, .save:hover {
+  color: #fff;
+}
+
+.save {
+  right: 52px;
 }

@@ -1,7 +1,76 @@
-#service-draw {
-  width: 400px;
-  height: 200px;
+.handle {
+  background-color: rgba(1, 1, 1, 0.9);
+  position: absolute;
+  height: 40px;
+  left: 0;
+  right: 0;
+  top: -40px;
+}
+
+#canvas-wrapper {
+  position: absolute;
   z-index: 2;
-  top: 100px;
-  background-color: #fff;
+  top: 105px;
+}
+
+#service-draw {
+  background-color: rgba(1, 1, 1, 0.65);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.color {
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.color.active {
+  box-shadow: #fff 0 0 5px,
+              #fff 0 0 10px,
+              #fff 0 0 15px;
+}
+
+.color.pink {
+  left: 10px;
+}
+
+.color.blue {
+  left: 61px;
+}
+
+.color.green {
+  left: 112px;
+}
+
+.filter {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  position: absolute;
+  bottom: 0;
+  width: 130px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter.screen {
+  right: 131px;
+}
+
+.filter.color-burn {
+  right: 0;
+}
+
+.active.filter {
+  text-shadow: #9000eb 0 0 5px,
+               #9000eb 0 0 10px,
+               #9000eb 0 0 15px,
+               #9000eb 0 0 25px;
 }

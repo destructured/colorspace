@@ -10,5 +10,5 @@ let play = document.querySelector('#play');
 
 play.onclick = function () {
   blocks.runService('draw');
-  console.log('running service')
+  console.log('running service');
 };

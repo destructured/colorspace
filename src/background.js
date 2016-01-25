@@ -144,8 +144,7 @@ exports.generate = function () {
     scene.add(directionalLight);
 
     renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true
+      alpha: true
     });
 
     renderer.setClearColor('#fff', 0);
@@ -174,13 +173,20 @@ exports.generate = function () {
 
   function animate() {
     // ++++++ CPU OVERLOAD BE CAREFUL
-    // requestAnimationFrame(animate);
-    // controls.update();
+    setTimeout(() => {
+      requestAnimationFrame(animate);
+    }, 100);
+
+    controls.update();
     render();
   }
 
   function render() {
-    camera.lookAt(scene.position);
+    let timer = Date.now() * 0.0003;
+    camera.rotation.y = Math.sin(timer) + 1300;
+    camera.rotation.x = Math.cos(timer) + 1200;
+
+   // camera.lookAt(scene.position);
     renderer.render(scene, camera);
   }
 };
