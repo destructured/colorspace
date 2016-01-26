@@ -1,11 +1,12 @@
 'use strict';
 
-const blockActions = {
-  draw: ['ff0048', '8f00af', 'ff0048', '8f00af', 'ff0048', '8f00af'],
-  camera: ['00cc66', 'ffb600', '0097ff', '00cc66', 'ffb600', '0097ff']
-};
+const commands = require('./commands');
+
+const blockActions = commands.blockActions();
 
 const blocks = require('./blocks').getBlocks();
+
+let play = document.querySelector('#play');
 
 exports.blockActions = function () {
   return blockActions;
@@ -21,9 +22,12 @@ exports.generate = function () {
     let p = document.createElement('p');
     p.textContent = k;
     listItem.id = 'menu-' + k;
+    listItem.setAttribute('data-id', blockActions[k].join(','));
     listItem.setAttribute('data-service', k);
     listItem.onclick = function () {
       let buttons = listItem.querySelectorAll('.block');
+
+      commands.setCurrSequence(this.getAttribute('data-id'));
 
       for (let i = 0; i < buttons.length; i++) {
         console.log(buttons[i]);

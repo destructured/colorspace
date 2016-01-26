@@ -31,7 +31,14 @@ body {
   line-height: 3rem;
   text-align: center;
   cursor: pointer;
-  color: #000;
+}
+
+.close-service {
+  color: #f00;
+}
+
+.save {
+  color: #f0f;
 }
 
 .close-service:hover, .save:hover {

@@ -10,6 +10,7 @@ let currX = 0;
 let currY = 0;
 let clientX;
 let clientY;
+
 const width = window.innerWidth;
 const height = window.innerHeight;
 

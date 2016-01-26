@@ -68,7 +68,7 @@ exports.generate = function () {
       let cube = new THREE.Mesh(geometry, material);
 
       cube.scale.y = Math.floor(Math.random() * 5 + 1);
-      cube.position.x = Math.floor((Math.random() * 500) / 25) * 15 - 312;
+      cube.position.x = Math.floor((Math.random() * 400) / 15) * 15 - 312;
       cube.position.y = (cube.scale.y * 50) / 2;
       cube.position.z = Math.floor((Math.random() * 500 - 250) / 25) * 25 + 312;
 
@@ -172,17 +172,16 @@ exports.generate = function () {
   }
 
   function animate() {
-    // ++++++ CPU OVERLOAD BE CAREFUL
     setTimeout(() => {
       requestAnimationFrame(animate);
-    }, 100);
+    }, 110);
 
     controls.update();
     render();
   }
 
   function render() {
-    let timer = Date.now() * 0.0003;
+    let timer = Date.now() * 0.00008;
     camera.rotation.y = Math.sin(timer) + 1300;
     camera.rotation.x = Math.cos(timer) + 1200;
 
