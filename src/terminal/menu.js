@@ -28,7 +28,6 @@ exports.generate = function () {
       commands.setCurrSequence(this.getAttribute('data-id'));
 
       for (let i = 0; i < buttons.length; i++) {
-        console.log(buttons[i]);
         blocks[i].setColor(buttons[i].getAttribute('data-color'));
       }
 
