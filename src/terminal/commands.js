@@ -17,7 +17,6 @@ exports.blockActions = function () {
 };
 
 exports.matchSequence = function (sequence) {
-  console.log(sequence)
   return sequenceKeys[sequence] || false;
 };
 

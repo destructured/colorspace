@@ -4,6 +4,7 @@ const commands = require('./commands');
 
 // Services
 const draw = require('../services/draw');
+const camera = require('../services/camera');
 
 const colorArr = [
   'ff0048', // dark pink
@@ -24,6 +25,9 @@ exports.runService = function (service) {
   switch (service) {
     case 'draw':
       draw.generate();
+      break;
+    case 'camera':
+      camera.generate();
       break;
     default:
       break;

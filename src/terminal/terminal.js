@@ -8,6 +8,7 @@ menu.generate();
 blocks.generate();
 
 let play = document.querySelector('#play');
+let errorMsg = document.querySelector('#error');
 
 play.onclick = function () {
   let service = commands.matchSequence(commands.getCurrSequence());
@@ -16,6 +17,9 @@ play.onclick = function () {
     blocks.runService(service);
     console.log('running service');
   } else {
-    console.log('no such serivce');
+    errorMsg.classList.add('active');
+    setTimeout(() => {
+      errorMsg.classList.remove('active');
+    }, 2000);
   }
 };

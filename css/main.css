@@ -21,6 +21,7 @@ body {
 }
 
 .close-service, .save {
+  font-family: Arial;
   background-color: rgba(1, 1, 1, 0.4);
   position: absolute;
   top: -80px;
@@ -47,4 +48,42 @@ body {
 
 .save {
   right: 52px;
+}
+
+#error {
+  padding: 15px 20px;
+  background-color: rgba(1, 1, 1, 0.8);
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  position: absolute;
+  display: inline-block;
+  top: 70px;
+  width: 340px;
+  opacity: 0;
+  left: -340px;
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all;
+}
+
+#error.active {
+  opacity: 1;
+  left: 0;
+  transition: 1s all ease-in-out;
+  -webkit-transition: 1s all ease-in-out;
+}
+
+.handle {
+  background-color: rgba(1, 1, 1, 0.9);
+  position: absolute;
+  height: 40px;
+  left: 0;
+  right: 0;
+  top: -40px;
+}
+
+#canvas-wrapper, #video-wrapper {
+  position: absolute;
+  z-index: 2;
+  top: 105px;
 }

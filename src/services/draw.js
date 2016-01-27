@@ -175,7 +175,6 @@ exports.generate = function () {
   }
 
   let filters = ['screen', 'color-burn'];
-
   let filter;
 
   filters.forEach((f) => {

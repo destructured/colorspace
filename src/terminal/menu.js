@@ -6,8 +6,6 @@ const blockActions = commands.blockActions();
 
 const blocks = require('./blocks').getBlocks();
 
-let play = document.querySelector('#play');
-
 exports.blockActions = function () {
   return blockActions;
 };
