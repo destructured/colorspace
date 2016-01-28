@@ -1,8 +1,8 @@
 'use strict';
 
 const blockActions = {
-  draw: ['ff0048', '8f00af', 'ff0048', '8f00af', 'ff0048', '8f00af'],
-  camera: ['00cc66', 'ffb600', '0097ff', '00cc66', 'ffb600', '0097ff']
+  draw: ['ff0048', '8f00af', 'ff0048'],
+  camera: ['00cc66', 'ffb600', '0097ff']
 };
 
 let sequenceKeys = {};

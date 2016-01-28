@@ -15,7 +15,6 @@ play.onclick = function () {
 
   if (service) {
     blocks.runService(service);
-    console.log('running service');
   } else {
     errorMsg.classList.add('active');
     setTimeout(() => {

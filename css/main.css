@@ -64,6 +64,7 @@ body {
   left: -340px;
   transition: 1s all ease-in-out;
   -webkit-transition: 1s all;
+  z-index: 99;
 }
 
 #error.active {

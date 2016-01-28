@@ -41,11 +41,6 @@ exports.generate = function () {
     this.setColor = function (color) {
       this.color = color;
       document.querySelector('#block-' + this.position).style.backgroundColor = '#' + this.color;
-      localforage.setItem('blocks', JSON.stringify(blocks), (err) => {
-        if (err) {
-          console.log(err);
-        }
-      });
     };
 
     this.cycleColor = function () {
@@ -65,12 +60,6 @@ exports.generate = function () {
       }
 
       commands.setCurrSequence(blocksArr.join(','));
-
-      localforage.setItem('blocks', JSON.stringify(blocks), (err) => {
-        if (err) {
-          console.log(err);
-        }
-      });
     }.bind(this);
   };
 
@@ -94,32 +83,19 @@ exports.generate = function () {
 
   let blocksArr = [];
 
-  localforage.getItem('blocks', (err, blks) => {
-    if (err || !blks) {
-      let count = 0;
-      colorArr.forEach((color) => {
-        setBlockItem({
-          count: count,
-          color: color,
-          colorPosition: count,
-          position: count
-        });
-        blocksArr.push(color);
-        count++;
-      });
-    } else {
-      blks = JSON.parse(blks);
-      for (let k in blks) {
-        setBlockItem({
-          count: k,
-          color: blks[k].color,
-          colorPosition: blks[k].colorPosition,
-          position: blks[k].position
-        });
-        blocksArr.push(blks[k].color);
-      }
-    }
+  let count = 0;
 
-    commands.setCurrSequence(blocksArr.join(','));
-  });
+  for (let i = 0; i < 3; i++) {
+    let color = colorArr[i];
+    setBlockItem({
+      count: count,
+      color: color,
+      colorPosition: count,
+      position: count
+    });
+    blocksArr.push(color);
+    count++;
+  }
+
+  commands.setCurrSequence(blocksArr.join(','));
 };

@@ -6,7 +6,7 @@
   display: inline-block;
   position: absolute;
   z-index: 5;
-  width: 350px;
+  width: 220px;
 }
 
 .terminal button, #menu-items button {
@@ -44,7 +44,7 @@ button:focus {
   padding-left: 48px;
   list-style-type: none;
   margin: 0;
-  width: 332px;
+  width: 220px;
   display: none;
   z-index: 99;
 }
