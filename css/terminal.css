@@ -7,7 +7,6 @@
   position: absolute;
   z-index: 5;
   width: 220px;
-  font-family: Arial;
 }
 
 .terminal button, #menu-items button {
@@ -18,6 +17,7 @@
   padding: 0;
   margin: 1px;
   display: inline-block;
+  font-family: Arial;
 }
 
 button {
