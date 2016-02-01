@@ -7,6 +7,7 @@
   position: absolute;
   z-index: 5;
   width: 220px;
+  font-family: Arial;
 }
 
 .terminal button, #menu-items button {
