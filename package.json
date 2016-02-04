@@ -6,8 +6,7 @@
   "scripts": {
     "start": "electron main.js",
     "build": "webpack -p --progress",
-    "dev": "webpack --progress --color --watch & electron main.js",
-    "build:osx": "npm run pack:osx && electron-builder \"dist/osx/Colorspace.app\" --platform=osx --out=\"dist/osx\" --config=builder.json"
+    "dev": "webpack --progress --color --watch & electron main.js"
   },
   "repository": {
     "type": "git",
