@@ -1,7 +1,7 @@
 {
-  "name": "fake",
+  "name": "colorspace",
   "version": "1.0.0",
-  "description": "fake",
+  "description": "color sequences",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ednapiranha/fake.git"
+    "url": "git@github.com:destructured/colorspace.git"
   },
   "author": "Jen",
   "devDependencies": {
